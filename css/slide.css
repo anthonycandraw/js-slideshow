@@ -2,23 +2,25 @@ body { margin: 0; padding: 0; }
 ul { list-style: none; padding: 0; text-indent: 0; }
 
 .arrow {
-  background-color: red;
+  background-color: white;
+  border-radius: 50%;
   bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
   cursor: pointer;
-  height: 48px;
+  height: 64px;
   margin: auto;
   position: absolute;
   top: 0;
-  width: 48px;
+  width: 64px;
   z-index: 10;
 }
 
 .arrow--left {
-  left: 16px;
+  left: 24px;
 }
 
 .arrow--right {
-  right: 16px;
+  right: 24px;
 }
 
 .slides {
@@ -115,6 +117,14 @@ ul { list-style: none; padding: 0; text-indent: 0; }
   transform: translate3d(-100%,0,0);
   transition: opacity .3s, transform .3s;
   width: 100%;
+}
+
+.slide__title {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 #BevRage { background-color: #c5ecd9; }

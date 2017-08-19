@@ -6,8 +6,6 @@ var slideProgress = document.getElementById('slide__progress');
 var slideNames = ['SingleCare', 'MobiSave', 'LateShift', 'Thnks', 'BevRage']
 var slideNumber = 0;
 
-console.log(slideNumber);
-
 var slideProgressBar = document.createElement('div');
 slideProgressBar.setAttribute('id', 'slideProgressBar');
 slideProgressBar.style.backgroundColor = 'black';
@@ -34,15 +32,32 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slideTitle.style.overflow = 'hidden';
   document.getElementsByClassName('slide')[slideDotNumber].appendChild(slideTitle);
 
+  // for (var k = 0; k < slideNames[slideDotNumber].length; k++) {
+  //   var slideLetter = slideNames[slideDotNumber][k];
+  //   var slideLetters = document.createElement('li');
+  //   slideLetters.innerHTML = slideLetter;
+  //   slideLetters.setAttribute('class', 'slide__title__letter');
+  //   slideLetters.style.color = '#fff';
+  //   slideLetters.style.fontFamily = 'Arial, sans-serif';
+  //   slideLetters.style.fontSize = '120px';
+  //   slideLetters.style.fontWeight = 'bold';
+  //   slideLetters.style.margin = '0 4px';
+  //   slideLetters.style.textShadow = '0 0 32px rgba(0,0,0,.05)';
+  //   slideLetters.style.textTransform = 'uppercase';
+  //   slideLetters.style.transform = 'translate3d(0, 100%, 0)';
+  //   slideLetters.style.transition = 'transform .8s';
+  //   document.getElementsByClassName('slide__title')[slideDotNumber].appendChild(slideLetters);
+  // }
+
   var slideLetters = document.createElement('li');
-  slideLetters.innerHTML = slideNames[slideDotNumber];
+  slideLetters.innerHTML = slideNames[slideDotNumber].split();
   slideLetters.setAttribute('class', 'slide__title__letter');
   slideLetters.style.color = '#fff';
   slideLetters.style.fontFamily = 'Arial, sans-serif';
   slideLetters.style.fontSize = '120px';
   slideLetters.style.fontWeight = 'bold';
   slideLetters.style.margin = '0 16px';
-  slideLetters.style.textShadow = '0 0 32px rgba(0,0,0,.05)';
+  slideLetters.style.textShadow = '0 0 24px rgba(0,0,0,.08)';
   slideLetters.style.textTransform = 'uppercase';
   slideLetters.style.transform = 'translate3d(0, 100%, 0)';
   slideLetters.style.transition = 'transform .8s';
@@ -80,12 +95,23 @@ function slideShift() {
 
   for (var i = 0; i < slideNames.length; i++) {
     if (slideNumber == i) {
-      console.log(slideLetters[i]);
       document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,0,0)';
     } else {
       document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,100%,0)';
     }
   }
+
+  // for (var i = 0; i < slideNames.length; i++) {
+  //   if (slideNumber == i) {
+  //     console.log(slideNames[i]);
+  //     console.log(slideNames[i].length);
+  //
+  //     for (var j = 0; j < slideNames[i].length; j++) {
+  //       console.log(document.getElementsByClassName('slide__title__letter')[j]);
+  //       document.getElementsByClassName('slide__title__letter')[j].style.transform = 'translate3d(0,0,0)';
+  //     }
+  //   }
+  // }
 }
 slideShift();
 
