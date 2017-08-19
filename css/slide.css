@@ -19,6 +19,40 @@ ul { list-style: none; padding: 0; text-indent: 0; }
   left: 24px;
 }
 
+.arrow--left:before,
+.arrow--left:after,
+.arrow--right:before,
+.arrow--right:after {
+  background-color: black;
+  content: '';
+  height: 3px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 18px;
+}
+
+.arrow--left:before,
+.arrow--right:after {
+  transform: rotate(-45deg);
+}
+
+.arrow--right:before,
+.arrow--left:before {
+  top: 29px;
+}
+
+.arrow--right:after,
+.arrow--left:after {
+  bottom: 29px;
+}
+
+.arrow--left:after,
+.arrow--right:before {
+  transform: rotate(45deg);
+}
+
 .arrow--right {
   right: 24px;
 }
@@ -129,7 +163,7 @@ ul { list-style: none; padding: 0; text-indent: 0; }
 
 #BevRage { background-color: #c5ecd9; }
 #SingleCare {
-  background-color: #F5F2EB;
+  background-color: #fceede;
 }
 
 #MobiSave {

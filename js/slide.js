@@ -27,6 +27,13 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slide.setAttribute('id', slideNames[slideDotNumber]);
   document.getElementById('slide__container').appendChild(slide);
 
+  var slidePage = document.createElement('p');
+  slidePage.setAttribute('id', 'slide__page');
+  slidePage.style.left = '24px';
+  slidePage.style.margin = '0';
+  slidePage.style.top = '24px';
+  slidePage.style.width = '180px';
+
   var slideTitle = document.createElement('ul');
   slideTitle.setAttribute('class', 'slide__title');
   slideTitle.style.overflow = 'hidden';
@@ -58,10 +65,11 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slideLetters.style.fontStyle = 'italic';
   slideLetters.style.fontWeight = 'bold';
   slideLetters.style.margin = '0 16px';
-  slideLetters.style.textShadow = '0 0 24px rgba(0,0,0,.08)';
+  slideLetters.style.opacity = '0';
+  // slideLetters.style.textShadow = '0 0 24px rgba(0,0,0,.08)';
   slideLetters.style.textTransform = 'uppercase';
   slideLetters.style.transform = 'translate3d(0, 100%, 0)';
-  slideLetters.style.transition = 'transform .8s';
+  slideLetters.style.transition = 'opacity 1.4s, transform 1s';
   document.getElementsByClassName('slide__title')[slideDotNumber].appendChild(slideLetters);
 
   var slideBtn = document.createElement('li');
@@ -97,8 +105,10 @@ function slideShift() {
   for (var i = 0; i < slideNames.length; i++) {
     if (slideNumber == i) {
       document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,0,0)';
+      document.getElementsByClassName('slide__title__letter')[i].style.opacity = '1';
     } else {
       document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,100%,0)';
+      document.getElementsByClassName('slide__title__letter')[i].style.opacity = '0';
     }
   }
 
