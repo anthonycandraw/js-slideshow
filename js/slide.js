@@ -45,7 +45,7 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slideLetters.style.textShadow = '0 0 32px rgba(0,0,0,.05)';
   slideLetters.style.textTransform = 'uppercase';
   slideLetters.style.transform = 'translate3d(0, 100%, 0)';
-  slideLetters.style.transition = 'transform .3s';
+  slideLetters.style.transition = 'transform .8s';
   document.getElementsByClassName('slide__title')[slideDotNumber].appendChild(slideLetters);
 
   var slideBtn = document.createElement('li');
@@ -77,8 +77,18 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
 function slideShift() {
   slideProgressBar.style.width = 100 * ((slideNumber + 1) / slideNames.length) + '%';
   slideContainer.style.transform = 'translate3d(' + (-100 * (slideNumber)) + '%,0,0)';
+
+  for (var i = 0; i < slideNames.length; i++) {
+    if (slideNumber == i) {
+      console.log(slideLetters[i]);
+      document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,0,0)';
+    } else {
+      document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,100%,0)';
+    }
+  }
 }
 slideShift();
+
 
 arrowRight.addEventListener('click', function() {
   if (slideNumber >= slideNames.length - 1) {
