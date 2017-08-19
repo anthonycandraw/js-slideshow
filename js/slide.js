@@ -54,7 +54,7 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slideLetters.setAttribute('class', 'slide__title__letter');
   slideLetters.style.color = '#fff';
   slideLetters.style.fontFamily = 'Arial, sans-serif';
-  slideLetters.style.fontSize = '120px';
+  slideLetters.style.fontSize = '160px';
   slideLetters.style.fontStyle = 'italic';
   slideLetters.style.fontWeight = 'bold';
   slideLetters.style.margin = '0 16px';

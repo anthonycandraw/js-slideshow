@@ -7,11 +7,11 @@ ul { list-style: none; padding: 0; text-indent: 0; }
   bottom: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
   cursor: pointer;
-  height: 64px;
+  height: 72px;
   margin: auto;
   position: absolute;
   top: 0;
-  width: 64px;
+  width: 72px;
   z-index: 10;
 }
 
