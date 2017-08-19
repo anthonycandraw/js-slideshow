@@ -50,11 +50,12 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   // }
 
   var slideLetters = document.createElement('li');
-  slideLetters.innerHTML = slideNames[slideDotNumber].split();
+  slideLetters.innerHTML = slideNames[slideDotNumber];
   slideLetters.setAttribute('class', 'slide__title__letter');
   slideLetters.style.color = '#fff';
   slideLetters.style.fontFamily = 'Arial, sans-serif';
   slideLetters.style.fontSize = '120px';
+  slideLetters.style.fontStyle = 'italic';
   slideLetters.style.fontWeight = 'bold';
   slideLetters.style.margin = '0 16px';
   slideLetters.style.textShadow = '0 0 24px rgba(0,0,0,.08)';
@@ -114,6 +115,21 @@ function slideShift() {
   // }
 }
 slideShift();
+
+function slideJump(n) {
+  slideNumber = n;
+  console.log(slideNumber);
+  slideShift();
+}
+
+for (var m = 0; m < slideNames.length; m++) {
+  console.log(m);
+  document.getElementsByClassName('slide__btn')[m].addEventListener('click', function(m) {
+    return function() {
+      slideJump(m);
+    };
+  }(m));
+}
 
 
 arrowRight.addEventListener('click', function() {
