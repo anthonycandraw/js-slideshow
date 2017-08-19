@@ -1,26 +1,26 @@
-body {
-  margin: 0;
-  padding: 0;
-}
+body { margin: 0; padding: 0; }
+ul { list-style: none; padding: 0; text-indent: 0; }
 
 .arrow {
-  background-color: red;
+  background-color: white;
+  border-radius: 50%;
   bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
   cursor: pointer;
-  height: 48px;
+  height: 64px;
   margin: auto;
   position: absolute;
   top: 0;
-  width: 48px;
+  width: 64px;
   z-index: 10;
 }
 
 .arrow--left {
-  left: 16px;
+  left: 24px;
 }
 
 .arrow--right {
-  right: 16px;
+  right: 24px;
 }
 
 .slides {
@@ -47,31 +47,94 @@ body {
 }
 
 .slide {
-  display: block;
+  display: flex;
+  -webkit-display: flex;
+  align-content: center;
+  align-items: center;
   height: 100%;
+  justify-content: center;
   min-width: 100%;
   width: 100%;
+}
+
+.slide__btn {
+  background-color: rgba(0,0,0,.08);
+}
+
+.slide__btn:hover {
+  background-color: rgba(0,0,0,.12);
+}
+
+.slide__btn:hover .slide__btn__label {
+  opacity: .5;
+}
+
+.slide__btn__label {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+#slide__dots {
+  bottom: 0;
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 16px;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translate3d(0,8px,0);
+  transition: transform .3s;
+  width: 100%;
+}
+
+#slides__navigation {
+  bottom: 0;
+  height: 64px;
+  position: absolute;
+  transform: translate3d(0, 8px, 0);
+  transition: transform .3s;
+  width: 100%;
+}
+
+#slides__navigation:hover {
+  transform: translate3d(0,0,0);
+}
+
+#slides__navigation:hover #slide__dots {
+  transform: translate3d(0,0,0);
 }
 
 .slides__progress {
   background-color: black;
   bottom: 0;
-  height: 8px;
+  height: 16px;
   left: 0;
-  opacity: .08;
+  opacity: .16;
   position: absolute;
   transform: translate3d(-100%,0,0);
-  transition: transform .3s;
+  transition: opacity .3s, transform .3s;
   width: 100%;
 }
 
-#slide-0 {
+.slide__title {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+#BevRage { background-color: #c5ecd9; }
+#SingleCare {
   background-color: #F5F2EB;
 }
 
-#slide-1 {
+#MobiSave {
   background-color: #FEE2F6;
 }
 
-#slide-2 { background-color: #FEE25A; }
-#slide-3 { background-color: cyan; }
+#LateShift { background-color: #FEE25A; }
+#Thnks { background-color: #C5ECEA; }
