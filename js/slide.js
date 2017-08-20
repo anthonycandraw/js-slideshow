@@ -59,21 +59,6 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
     document.getElementsByClassName('slide__title')[slideDotNumber].appendChild(slideLetters);
   }
 
-  // var slideLetters = document.createElement('li');
-  // slideLetters.innerHTML = slideNames[slideDotNumber];
-  // slideLetters.setAttribute('class', 'slide__title__letter');
-  // slideLetters.style.color = '#fff';
-  // slideLetters.style.fontFamily = 'Arial, sans-serif';
-  // slideLetters.style.fontSize = '160px';
-  // slideLetters.style.fontStyle = 'italic';
-  // slideLetters.style.fontWeight = 'bold';
-  // slideLetters.style.margin = '0 16px';
-  // slideLetters.style.opacity = '0';
-  // slideLetters.style.textTransform = 'uppercase';
-  // slideLetters.style.transform = 'translate3d(0, 100%, 0)';
-  // slideLetters.style.transition = 'opacity 1.4s, transform 1s';
-  // document.getElementsByClassName('slide__title')[slideDotNumber].appendChild(slideLetters);
-
   var slideBtn = document.createElement('li');
   slideBtn.setAttribute('class', 'slide__btn');
   slideBtn.style.cursor = 'pointer';
@@ -114,22 +99,26 @@ function slideShift() {
   //   }
   // }
 
+
+
   for (var i = 0; i < slideNames.length; i++) {
     var slide = document.getElementsByClassName('slide')[i];
     var slideLetterCount = 0;
 
-    if (slideNumber == i) {
+    function slideLetterShift() {
+      var slideNameCount = slideNames[i].length;
+      console.log(slideLetterCount);
 
-      var slideLetterShift = function(n) {
-        slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.transform = 'translate3d(0,0,0)';
-        slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.opacity = '1';
-        slideLetterCount++;
+      slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.transform = 'translate3d(0,0,0)';
+      slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.opacity = '1';
+      slideLetterCount++;
 
-        if (slideLetterCount < slideNames[i].length) {
-          setTimeout(slideLetterShift(slideLetterCount), 1000 * slideLetterCount);
-        }
+      if (slideLetterCount < slideNames[i].length) {
+        slideLetterShift();
       }
+    }
 
+    if (slideNumber == i) {
       slideLetterShift();
 
     } else {
