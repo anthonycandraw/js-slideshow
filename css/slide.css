@@ -160,15 +160,3 @@ ul { list-style: none; padding: 0; text-indent: 0; }
   justify-content: center;
   flex-wrap: nowrap;
 }
-
-#BevRage { background-color: #c5ecd9; }
-#SingleCare {
-  background-color: #fceede;
-}
-
-#MobiSave {
-  background-color: #FEE2F6;
-}
-
-#LateShift { background-color: #FEE25A; }
-#Thnks { background-color: #C5ECEA; }
