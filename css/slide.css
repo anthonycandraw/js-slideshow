@@ -126,7 +126,7 @@ ul { list-style: none; padding: 0; text-indent: 0; }
 
 #slides__navigation {
   bottom: 0;
-  height: 64px;
+  height: 72px;
   position: absolute;
   transform: translate3d(0, 8px, 0);
   transition: transform .3s;
@@ -139,18 +139,6 @@ ul { list-style: none; padding: 0; text-indent: 0; }
 
 #slides__navigation:hover #slide__dots {
   transform: translate3d(0,0,0);
-}
-
-.slides__progress {
-  background-color: black;
-  bottom: 0;
-  height: 16px;
-  left: 0;
-  opacity: .16;
-  position: absolute;
-  transform: translate3d(-100%,0,0);
-  transition: opacity .3s, transform .3s;
-  width: 100%;
 }
 
 .slide__title {
