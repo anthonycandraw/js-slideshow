@@ -85,41 +85,44 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   document.getElementsByClassName('slide__btn__label')[slideDotNumber].innerHTML = slideNames[slideDotNumber];
 }
 
+function slideLetterShift(p, q) {
+  var slide = document.getElementsByClassName('slide')[q];
+  console.log('This is before: ' + p);
+
+  slide.getElementsByClassName('slide__title__letter')[p].style.transform = 'translate3d(0,0,0)';
+  slide.getElementsByClassName('slide__title__letter')[p].style.opacity = '1';
+  p++;
+
+  if (p < slideNames[q].length) {
+    setTimeout(function() {
+      slideLetterShift(p,q)
+    }, 30);
+  }
+}
+
 function slideShift() {
   slideProgressBar.style.width = 100 * ((slideNumber + 1) / slideNames.length) + '%';
   slideContainer.style.transform = 'translate3d(' + (-100 * (slideNumber)) + '%,0,0)';
-
-  // for (var i = 0; i < slideNames.length; i++) {
-  //   if (slideNumber == i) {
-  //     document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,0,0)';
-  //     document.getElementsByClassName('slide__title__letter')[i].style.opacity = '1';
-  //   } else {
-  //     document.getElementsByClassName('slide__title__letter')[i].style.transform = 'translate3d(0,100%,0)';
-  //     document.getElementsByClassName('slide__title__letter')[i].style.opacity = '0';
-  //   }
-  // }
-
-
 
   for (var i = 0; i < slideNames.length; i++) {
     var slide = document.getElementsByClassName('slide')[i];
     var slideLetterCount = 0;
 
-    function slideLetterShift() {
-      var slideNameCount = slideNames[i].length;
-      console.log(slideLetterCount);
-
-      slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.transform = 'translate3d(0,0,0)';
-      slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.opacity = '1';
-      slideLetterCount++;
-
-      if (slideLetterCount < slideNames[i].length) {
-        slideLetterShift();
-      }
-    }
+    // function slideLetterShift() {
+    //   console.log('This is before: ' + slideLetterCount);
+    //
+    //   slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.transform = 'translate3d(0,0,0)';
+    //   slide.getElementsByClassName('slide__title__letter')[slideLetterCount].style.opacity = '1';
+    //   slideLetterCount++;
+    //
+    //   if (slideLetterCount < slideNames[i].length) {
+    //     // setTimeout(slideLetterShift, 30);
+    //     slideLetterShift(slideLetterCount, i);
+    //   }
+    // }
 
     if (slideNumber == i) {
-      slideLetterShift();
+      slideLetterShift(slideLetterCount, i);
 
     } else {
       for (slideLetterCount = 0; slideLetterCount < slideNames[i].length; slideLetterCount++) {
