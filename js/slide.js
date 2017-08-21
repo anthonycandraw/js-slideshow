@@ -50,9 +50,9 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
     slideLetters.setAttribute('class', 'slide__title__letter');
     slideLetters.style.color = '#fff';
     slideLetters.style.fontFamily = 'Arial, sans-serif';
-    slideLetters.style.fontSize = '128px';
+    // slideLetters.style.fontSize = '128px';
     slideLetters.style.fontWeight = 'bold';
-    slideLetters.style.padding = '0 4px';
+    // slideLetters.style.padding = '0 4px';
     slideLetters.style.opacity = '0';
     slideLetters.style.textTransform = 'uppercase';
     slideLetters.style.transform = 'translate3d(0, 100%, 0)';
