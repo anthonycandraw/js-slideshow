@@ -3,57 +3,34 @@ ul { list-style: none; padding: 0; text-indent: 0; }
 
 .arrow {
   background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
   border-radius: 50%;
   bottom: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
   cursor: pointer;
   height: 72px;
   margin: auto;
+  opacity: .8;
   position: absolute;
   top: 0;
+  transition: opacity .3s;
   width: 72px;
   z-index: 10;
 }
 
+.arrow:hover {
+  opacity: 1;
+}
+
 .arrow--left {
+  background-image: url('../images/arrow-left.png');
   left: 24px;
 }
 
-.arrow--left:before,
-.arrow--left:after,
-.arrow--right:before,
-.arrow--right:after {
-  background-color: black;
-  content: '';
-  height: 3px;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  width: 18px;
-}
-
-.arrow--left:before,
-.arrow--right:after {
-  transform: rotate(-45deg);
-}
-
-.arrow--right:before,
-.arrow--left:before {
-  top: 29px;
-}
-
-.arrow--right:after,
-.arrow--left:after {
-  bottom: 29px;
-}
-
-.arrow--left:after,
-.arrow--right:before {
-  transform: rotate(45deg);
-}
-
 .arrow--right {
+  background-image: url('../images/arrow-right.png');
   right: 24px;
 }
 
