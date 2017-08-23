@@ -72,7 +72,6 @@ for (var slideDotNumber = 0; slideDotNumber < slideNames.length; slideDotNumber+
   slideImage.style.margin = 'auto';
   slideImage.style.position = 'absolute';
   slideImage.style.right = '0';
-  slideImage.style.top = '0';
   slideImage.style.transform = 'scale3d(.5,.5,.5) translate3d(40%,0,0)';
   slideImage.style.transition = 'transform .5s';
   document.getElementsByClassName('slide')[slideDotNumber].appendChild(slideImage);

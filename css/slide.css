@@ -171,11 +171,18 @@ ul { list-style: none; padding: 0; text-indent: 0; }
 
   .slide__title__letter {
     font-size: 96px;
-    margin: 0 6px;
+    margin: 0 4px;
   }
 }
 
 @media screen and (min-width: 1300px) {
+
+  .slide__image {
+    height: 640px;
+    width: 640px;
+  }
+
+
   .slide__title__letter {
     font-size: 168px;
   }
